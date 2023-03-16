@@ -3,7 +3,7 @@
 /**
  * main - main block
  *
- * return 0
+ * Return: Always
  */
 int main(void)
 {
