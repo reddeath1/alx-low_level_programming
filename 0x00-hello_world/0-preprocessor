@@ -1,2 +1,2 @@
 #!/bin/bash
-cpp "file1.c" > "file2.c"
+cpp "0-main.c" > "main.c"
