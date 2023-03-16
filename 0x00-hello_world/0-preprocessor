@@ -1,6 +1,2 @@
 #!/bin/bash
-
-CFILE="file1.c"
-OUTPUTFILE="file2.c"
-
-cpp $CFILE > $OUTPUTFILE
+cpp "file1.c" > "file2.c"
