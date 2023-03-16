@@ -1,7 +1,6 @@
 #include<stdio.h>
 
 /**
- *
  * main - main block
  *
  * Return: always
