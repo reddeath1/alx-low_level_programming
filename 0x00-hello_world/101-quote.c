@@ -10,11 +10,8 @@
 
 int main(void)
 {
-	int s = strlen("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
-	printf(s);
-
-	write(2,
+	write(STDOUT_FILENO,
 	      "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n",
-	      s);
+	      61);
 	return (1);
 }
