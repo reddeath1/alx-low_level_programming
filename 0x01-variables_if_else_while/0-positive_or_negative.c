@@ -3,7 +3,7 @@
 #include <time.h>
 /**
  * main - main bloc
- * Return:always 
+ * Return:always
  */
 
 int main(void)
