@@ -7,16 +7,23 @@
 
 int main(void)
 {
-	int chars;
+	int d, p;
 
-	for (chars = 0; chars < 100; chars++)
+	for (d = '0'; d < '9'; d++)
 	{
-		putchar((chars / 10) + '0');
-		putchar((chars % 10) + '0');
-		if (chars != 99)
+		for (p = d + 1; p <= '9'; p++)
 		{
-			putchar(',');
-			putchar(' ');
+			if (p != d)
+			{
+				putchar(d);
+				putchar(p);
+
+				if (d == '8' && p == '9')
+					continue;
+
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
 
