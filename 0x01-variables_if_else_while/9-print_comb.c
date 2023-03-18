@@ -12,7 +12,8 @@ int main(void)
 	for (chars = 0; chars < 10; chars++)
 	{
 		putchar(chars + '0');
-		if (chars != 9){
+		if (chars != 9)
+		{
 			putchar(',');
 			putchar(' ');
 		}
