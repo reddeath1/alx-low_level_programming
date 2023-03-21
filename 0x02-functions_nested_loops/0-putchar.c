@@ -14,13 +14,8 @@ int main(void)
 	int i = 0;
 
 	for (; i < 9; i++)
-	{
-		if (i < 9)
-			_putchar(str[i]);
-	}
-
+		_putchar(str[i]);
 	_putchar('\n');
-
 	return (0);
 }
 
