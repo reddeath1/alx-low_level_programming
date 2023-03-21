@@ -2,7 +2,7 @@
 
 /**
  * _islower - check the code.
- * @i - arg
+ * @i: arg
  * Return: Always 0.
  */
 int _islower(int i)
@@ -13,6 +13,5 @@ int _islower(int i)
 	for (b = 'a'; b <= 'z'; b++)
 		if (b == i)
 			islower = 1;
-	
 	return (islower);
 }
