@@ -14,17 +14,17 @@ void print_times_table(int n)
 		{
 			_putchar('0');
 			for (j = 1; j <= n; j++)
-				format(i * j);
+				putformat(i * j);
 			_putchar('\n');
 		}
 	}
 }
 
 /**
- * format - format output
+ *putformat - format output
  * @n: number to format
  */
-void format(int n)
+void putformat(int n)
 {
 	if (n <= 9)
 	{
