@@ -2,7 +2,7 @@
 
 /**
  * _isalpha - Check
- * @i: input 
+ * @i: input
  * Description: function returns 1 if the character is a
  * character, lowercase or uppercase.
  * Return: 1 or 0.
