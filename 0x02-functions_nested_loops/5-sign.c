@@ -1,12 +1,15 @@
 #include "main.h"
 /**
- * Return: always 0
+ * print_sign - body
+ * @n: input
+ * Description: function  for if and else
+ * Return: always (nu)
  */
 
 int print_sign(int n)
 {
 	int nu;
-	
+
 	if (n > 0)
 	{
 		nu = 1;
