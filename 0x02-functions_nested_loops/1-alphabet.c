@@ -3,8 +3,8 @@
 
 /**
  * main - body
- * decription: function
- * return
+ * Decription: function main objective  is to print alphabet
+ * return: always
  */
 
 void print_alphabet(void)
