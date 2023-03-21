@@ -1,7 +1,8 @@
 /**
  * add - main body
- * @i, @v
- * decription: adding number
+ * @i: arg 
+ * @v: arg
+ * Decription: adding number
  */
 
 int add(int i, int v)
