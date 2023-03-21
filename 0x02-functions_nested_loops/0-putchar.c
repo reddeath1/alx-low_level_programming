@@ -11,9 +11,9 @@
 int main(void)
 {
 	char str[9] =  "_putchar";
-	int i = 0;
+	int i;
 
-	for (; i < 9; i++)
+	for (i = 0; i < 9; i++)
 		_putchar(str[i]);
 	_putchar('\n');
 	return (0);
