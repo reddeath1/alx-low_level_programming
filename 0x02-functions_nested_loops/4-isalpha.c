@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * _isalpha - Check
@@ -14,7 +14,7 @@ int _isalpha(int i)
 
 	for (islower = 'a'; islower <= 'z'; islower++)
 		for (isupper = 'A'; isupper <= 'Z'; isupper++)
-			if (c == islower || c == isupper)
+			if (i == islower || i == isupper)
 				ischar = 1;
 	return (ischar);
 }
