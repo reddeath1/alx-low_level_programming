@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * main - body
+ * print_alphabet - body
  * Decription: function main objective  is to print alphabet
  * return: always
  */
