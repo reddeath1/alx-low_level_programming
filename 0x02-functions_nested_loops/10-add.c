@@ -1,8 +1,9 @@
 /**
  * add - main body
- * @i: arg 
+ * @i: arg
  * @v: arg
  * Decription: adding number
+ * Return: always(0)
  */
 
 int add(int i, int v)
