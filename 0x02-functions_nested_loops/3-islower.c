@@ -14,5 +14,5 @@ int _islower(int i)
 		if (b == i)
 			islower = 1;
 	
-	return (0);
+	return (islower);
 }
