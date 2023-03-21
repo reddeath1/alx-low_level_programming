@@ -21,7 +21,7 @@ void print_times_table(int n)
 }
 
 /**
- * putformat - format output
+ * format - format output
  * @n: number to format
  */
 void format(int n)
