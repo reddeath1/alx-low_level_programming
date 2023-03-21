@@ -4,8 +4,8 @@
  * return: function
  */
 
-int _putchar(char* str)
+int _putchar(char str)
 {
-	return (write(,&str, 1));
+	return (write(1,&str, 1));
 }
 
