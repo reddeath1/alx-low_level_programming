@@ -7,15 +7,15 @@
  * return
  */
 
-int main(void)
+int print_alphabet(void)
 {
 	char c = 'a';
 
-	while ( c < 'z')
-	{
-		print_alphabet(c);
-	}
-	_putchar("\n");
+        while ( c < 'z')
+        {
+                _putchar(c);
+        }
+        _putchar("\n");
 
 	return (0);
 }
