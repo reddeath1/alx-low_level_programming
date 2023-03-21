@@ -13,10 +13,9 @@ int main(void)
 	char str[9] =  "_putchar";
 	int i = 0;
 
-	while (i < 9)
+	for (; i < 9; i++)
 	{
 		_putchar(str[i]);
-		i++;
 	}
 
 	_putchar('\n');
