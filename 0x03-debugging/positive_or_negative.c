@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main - main bloc
+ * positive_or_negative - main bloc
  * Return:always
  */
 
