@@ -6,41 +6,33 @@
  * Description: use _putchar to print.
  */
 
+void print_integer(int m);
+
 void print_number(int n)
 {
-	long m;
-	int c;
-	long nu;
-
-	nu = n;
-	if (nu < 0)
+	if (n == 0)
+		_putchar('0');
+	else if (n < 0)
 	{
-		nu *= -1;
 		_putchar('-');
+		print_integer(n * -1);
 	}
+	else
+		print_integer(n);
+}
 
-	m = 1;
-	c = 1;
-	while (c)
-	{
-		if (nu / (m * 10) > 0)
-			m *= 10;
-		else
-			c = 0;
-	}
+/**
+ * print_integer - A function to priting n
+ * @m: an input unsigned integer
+ * Return: Nothing
+ */
+void print_integer(int m)
+{
+	int i = 1000000000;
 
-
-	while (nu >= 0)
-	{
-		if (m == 1)
+	for (; i >= 1; i /= 10)
+		if (m / i != 0)
 		{
-			_putchar(nu % 10 + '0');
-			nu = -1;
+			_putchar((m / i) % 10 + '0');
 		}
-		else
-		{
-			_putchar((nu / m % 10) + '0');
-			m /= 10;
-		}
-	}
 }
