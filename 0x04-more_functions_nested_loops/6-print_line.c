@@ -3,6 +3,7 @@
 /**
  * print_line - print function
  * Decription:
+ * @n: arg
  */
 
 void print_line(int n)
