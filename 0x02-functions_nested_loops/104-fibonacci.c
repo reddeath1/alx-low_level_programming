@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	long int fr1 = 0, bk1 = 1, fr2 = 0, bk2 = 2,h1, h2, h3;
+	long int fr1 = 0, bk1 = 1, fr2 = 0, bk2 = 2, h1, h2, h3;
 	int count;
 
 	printf("%lu, %lu, ", bk1, bk2);
