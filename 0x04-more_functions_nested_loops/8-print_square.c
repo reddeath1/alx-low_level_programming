@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * print_square - print main
@@ -10,20 +10,20 @@ void print_square(int size)
 {
 	int i, e;
 
-	e = 0;
+	i = 0;
 
 	if (size < 1)
 		_putchar('\n');
 
-	while (e < size)
+	while (i < size)
 	{
 		e = 0;
 		while (e < size)
 		{
 			_putchar('#');
-			x++;
+			e++;
 		}
 		_putchar('\n');
-		e++;
+		i++;
 	}
 }
