@@ -1,6 +1,5 @@
 #include "main.h"
 #include <string.h>
-
 /**
  * _strlen - main function
  * @str: agr
