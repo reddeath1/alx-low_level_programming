@@ -1,10 +1,20 @@
-#include "main"
+#include "main.h"
+#include <string.h>
 /**
- *  _puts - main function 
- *  @str: arg
+ * _strlen - main function
+ * @str: agr
+ * Return: always
  */
 
-void _puts(str)
+int _strlen(char *str)
 {
+	int i;
 
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+	}
+	_putchar('\n');
+
+	return (0);
 }
