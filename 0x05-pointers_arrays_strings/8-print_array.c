@@ -3,7 +3,7 @@
 /**
  * print_array - main func
  * @a: arg
- * @b: arg2
+ * @n: arg2
  */
 
 void print_array(int *a, int n)
