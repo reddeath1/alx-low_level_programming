@@ -1,12 +1,10 @@
 #include "main.h"
-#include <string.h>
 /**
- * _strlen - main function
+ * _puts - main function
  * @str: agr
- * Return: always
  */
 
-int _strlen(char *str)
+void _puts(char *str)
 {
 	int i;
 
@@ -16,5 +14,4 @@ int _strlen(char *str)
 	}
 	_putchar('\n');
 
-	return (0);
 }
