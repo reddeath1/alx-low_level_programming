@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strcat - main func
+ * _strncat - main func
  * @dest: arg
  * @src: arg2
  * @n: arg3
