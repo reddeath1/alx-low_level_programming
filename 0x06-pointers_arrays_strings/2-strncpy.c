@@ -7,16 +7,26 @@
  * Return: always
  */
 
-
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i = n;
+	int i = 0;
 
-	for (; src[i] != '\0'; i++)
+	/*  Copy up to n bytes of src to dest*/
+	while (i < n && *src != '\0')
 	{
-		dest[i] = src[i];
+		*dest = *src;
+		dest++;
+		src++;
+		i++;
 	}
-	dest[i] = '\0';
+
+	/* Pad dest with null bytes if necessary */
+	while (i < n)
+	{
+		*dest = '\0';
+		dest++;
+		i++;
+	}
 
 	return (dest);
 }
