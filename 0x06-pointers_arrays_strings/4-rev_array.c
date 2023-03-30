@@ -2,9 +2,10 @@
 
 /**
  * reverse_array - main func.
- * @a: arg
+ * * @a: arg
  * @n: arg
  */
+
 void reverse_array(int *a, int n)
 {
 	int i = 0;
