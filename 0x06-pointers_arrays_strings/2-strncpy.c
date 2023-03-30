@@ -9,24 +9,18 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i = 0;
+	char *i;
 
 	/*  Copy up to n bytes of src to dest*/
-	while (i < n && *src != '\0')
+	i = dest;
+
+	while (n > 0)
 	{
 		*dest = *src;
 		dest++;
 		src++;
-		i++;
+		n--;
 	}
 
-	/* Pad dest with null bytes if necessary */
-	while (i < n)
-	{
-		*dest = '\0';
-		dest++;
-		i++;
-	}
-
-	return (dest);
+	return (i);
 }
