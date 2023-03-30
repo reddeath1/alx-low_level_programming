@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _strcmp - main func
- * #s1: arg1
+ * @s1: arg1
  * @s2: arg
  * Return: always
  */
