@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * _strpbrk - main func
+ * *_strpbrk - main func
  * @s: arg
  * @accept: aarg
- * Retuurn: always
+ * Return: always
  */
 
 char *_strpbrk(char *s, char *accept)
