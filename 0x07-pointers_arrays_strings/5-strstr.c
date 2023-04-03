@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * *__strstr - main func
+ * *_strstr - main func
  * @haystack: arg
  * @needle: aarg
  * Return: always
  */
 
-char *__strstr(char *haystack, char *needle)
+char *_strstr(char *haystack, char *needle)
 {
 	int i, j, c;
 
