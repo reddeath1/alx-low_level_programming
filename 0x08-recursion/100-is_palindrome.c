@@ -1,6 +1,6 @@
 #include "main.h"
 
-int _strlen_recursion(char *s);
+int strlen_recursion(char *s);
 int _palindrome(char *s, int len);
 
 /**
@@ -8,13 +8,13 @@ int _palindrome(char *s, int len);
  * @s: A string to calculate length
  * Return: the length of string s
  */
-int _strlen_recursion(char *s)
+int strlen_recursion(char *s)
 {
 	if (!*s)
 	{
 		return (0);
 	}
-	return (_strlen_recursion(s + 1) + 1);
+	return (strlen_recursion(s + 1) + 1);
 }
 
 /**
@@ -26,10 +26,10 @@ int is_palindrome(char *s)
 {
 	int len;
 
-	len = _strlen_recursion(s);
+	len = strlen_recursion(s);
 	if (len <= 1)
 		return (1);
-	return (helper_palindrome(s, len));
+	return (_palindrome(s, len));
 }
 
 /**
@@ -44,7 +44,7 @@ int _palindrome(char *s, int len)
 		return (1);
 	else if (*s == *(s + len - 1))
 	{
-		return (helper_palindrome(s + 1, len - 2));
+		return (_palindrome(s + 1, len - 2));
 	}
 	else
 		return (0);
