@@ -1,43 +1,26 @@
-#include "mainh"
+#include "main.h"
+#include <stdlib.h>
 
 /**
- * string_nconcat - A function that concatenates two strings
- * @s1: An input pointer of the first string
- * @s2: An input pointer of the second string
- * @n: an input integer of number of string to concatenate
- * Return: Apointer to concatened strings or NULL if it str is NULL
+ * _calloc - A function that allocates memory for an array using malloc
+ * @nmemb: number of memory spaces
+ * @size: size of nmemb
+ * Return: returns pointer to allocated space, or NULL on failure
  */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *new_str;
-	unsigned int i = 0, lens1 = 0, lens2 = 0;
+	unsigned int i = 0;
+	char *space;
 
-	if (s1 == NULL)
-		s1 = "";
-
-	while (s1[lens1])
-		lens1++;
-
-	if (s2 == NULL)
-		s2 = "";
-
-	while (s2[lens2])
-		lens2++;
-
-	if (n >= lens2)
-		n = lens2;
-
-	new_str = malloc(lens1 + n + 1);
-	if (new_str == NULL)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	for (; i < (lens1 + n); i++)
-	{
-		if (i < lens1)
-			new_str[i] = *s1, s1++;
-		else
-			new_str[i] = *s2, s2++;
-	}
-	new_str[i] = '\0';
-	return (new_str);
+	space = malloc(nmemb * size);
+	if (space == NULL)
+		return (NULL);
+
+	for (; i < nmemb * size; i++)
+		*(space + i) = 0;
+
+	return (space);
 }
