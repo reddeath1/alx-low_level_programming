@@ -1,21 +1,25 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
- * free_list - A function that frees all elements in a linked list
- * @head: pointer to head element of list
- * Return: Nothing
+ * print_list - A function that prints a linked list
+ * @h: pointer t  head of list
+ * Return: number of nodes in list as size_t
  */
-void free_list(list_t *head)
+size_t print_list(const list_t *h)
 {
-	list_t *temp;
+	unsigned int nodes = 0;
 
-	temp = head;
-	while (head)
+	while (h)
 	{
-		temp = head;
-		head = head->next;
-		free(temp->str);
-		free(temp);
+		printf("[%u] ", h->len);
+		if (h->str == NULL)
+			printf("(nil)\n");
+		else
+			printf("%s\n", h->str);
+
+		h = h->next;
+		nodes++;
 	}
-	free(head);
+	return (nodes);
 }
