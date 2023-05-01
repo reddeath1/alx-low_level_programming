@@ -22,12 +22,12 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	}
 	else
 	{
-		while (i < index)
+		while (v < index)
 		{
 			tmp = tmp->next;
 			if (tmp == NULL)
 				return (-1);
-			i++;
+			v++;
 		}
 		nod = tmp;
 		nod = nod->next;
