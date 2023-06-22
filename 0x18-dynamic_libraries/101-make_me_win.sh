@@ -1,9 +1,3 @@
 #!/bin/bash
-
-mkdir temp_dir
-cd temp_dir
-echo "9 8 10 24 75 9" > numbers.txt
-../gm $(cat numbers.txt)
-
-cd ..
-rm -rf temp_dir
+wget -P .. https://raw.githubusercontent.com/VicvekSr9485/alx-low_level_programming/main/0x18-dynamic_libraries/randnum.so
+export LD_PRELOAD="$PWD/../randnum.so"
