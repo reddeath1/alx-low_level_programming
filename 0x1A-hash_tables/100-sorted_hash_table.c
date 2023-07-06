@@ -8,7 +8,7 @@
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
-	unsigned long int i = 0;
+	unsigned long int x = 0;
 	shash_table_t *table = NULL;
 
 	table = malloc(sizeof(shash_table_t));
@@ -101,7 +101,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	while (!val)
 	{
 		if (strcmp(node->key, key) == 0)
-			value = node->value;
+			val = node->value;
 		node = node->next;
 	}
 	return (val);
@@ -129,12 +129,12 @@ void shash_table_print(const shash_table_t *ht)
 
 		for (v = 0; v <= pos; v++)
 		{
-			node = ht->array[i];
+			node = ht->array[v];
 			while (node)
 			{
 				printf("'%s': '%s'", node->key, node->value);
 				node = node->next;
-				if (i < pos - 1)
+				if (v < pos - 1)
 					printf(", ");
 			}
 
