@@ -1,35 +1,47 @@
 #include "search_algos.h"
-#include <math.h>
 
 /**
- * jump_search - main function for jump search algorithm for arrays.
- * @array: A pointer to inputed array.
- * @size: The size of array.
- * @value: The value to search for.
- * Return: The index of the value into the array.
+ * jump_list - main function that jump searches on singly linked list
+ * @list: pointer to head node
+ * @size: its size
+ * @value: value to search for
+ *
+ * Return: the node found or NULL
  */
-int *jump_list(int *array, size_t size, int value)
+listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	size_t a = 0, b = 0, step = sqrt(size);
+	size_t i = 0, j = sqrt(size), k = 0, lj = 0;
+	listint_t *last = list;
 
-	if (array == NULL || size == 0)
-		return (-1);
+	if (!list)
+		return (NULL);
 
-	while (b < size && array[b] < value)
+	while (list->n < value)
 	{
-		a = b;
-		b += step;
-		printf("Value checked array[%lu] = [%d]\n", a, array[a]);
-	}
-	printf("Value found between indexes [%lu] and [%lu]\n", a, b);
-
-	while (a < b)
-	{
-		printf("Value checked array[%lu] = [%d]\n", a, array[a]);
-		if (array[a] == value)
-			return (a);
-		a++;
+		for (last_j = i, last = list, k = 0; list->next && k < j; k++)
+		{
+			list = list->next;
+			i++;
+		}
+		printf("Value checked at index [%lu] = [%d]\n", i, list->n);
+		if (!list->next)
+			break;
 	}
 
-	return (-1);
+	if (!list->next)
+		j = lj;
+	else
+		j = i >= j ? i - j : 0;
+	printf("Value found between indexes [%lu] and [%lu]\n", j, i);
+	i = i >= size ? size - 1 : i;
+	list = last;
+	while (list)
+	{
+		printf("Value checked at index [%lu] = [%d]\n", j, list->n);
+		if (list->n == value)
+			return (list);
+		j++;
+		list = list->next;
+	}
+	return (NULL);
 }
