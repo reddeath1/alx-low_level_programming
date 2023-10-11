@@ -1,32 +1,49 @@
 #include "search_algos.h"
 
 /**
- * exponential_search - The main function performs exponential search
+ * _binary - main function performs advanced binary search
  * @array: the integer array
  * @size: its size
  * @value: value to search for
  *
  * Return: the index found or -1
  */
-int exponential_search(int *array, size_t size, int value)
+int *_binary(int *array, size_t size, int value)
 {
-	size_t i = 1, siz = 0;
-	int ret;
+	size_t i = 0;
 
-	if (!array || !size)
-		return (-1);
+	if (!size || !array)
+		return (NULL);
+	for (printf("Searching in array: "); i < size; i++)
+		printf("%d%s", array[i], i + 1 == size ? "\n" : ", ");
 
-	while (i < size && array[i] < value)
+	i = (size - 1) / 2;
+	if (array[i] == value)
 	{
-		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
-		i <<= 1;
+		if (i)
+			return (_binary(array, i + 1, value));
+		return (array + i);
 	}
-	siz = (i >= size ? size : i + 1) - (i >> 1);
-	i >>= 1;
-	printf("Value found between indexes [%lu] and [%lu]\n",
-			i, i << 1 >= size ? size - 1 : i << 1);
-	ret = binary_search(array + i, siz, value);
-	return (ret == -1 ? ret : ret + (int)i);
+	else if (array[i] > value)
+		return (_binary(array, i + 1, value));
+	else
+		return (_binary(array + i + 1, size - i - 1, value));
 }
 
+/**
+ * advanced_binary - main function that performs advanced binary search
+ * @array: the integer array
+ * @size: its size
+ * @value: value to search for
+ *
+ * Return: the index found or -1
+ */
+int advanced_binary(int *array, size_t size, int value)
+{
+	int *a = _binary(array, size, value);
 
+	if (!a)
+		return (-1);
+	else
+		return (a - array);
+}
