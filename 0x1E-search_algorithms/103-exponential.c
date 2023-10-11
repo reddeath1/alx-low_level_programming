@@ -1,40 +1,65 @@
 #include "search_algos.h"
 
 /**
- * interpolation_search - The main function for interpolation search algorithm for arrays.
- * @array: A pointer to inputed array.
- * @size: The size of array.
- * @value: The value to search for.
- * Return: The index of the value into the array.
+ * exponential_search - main function that performs exponential search
+ * @array: the integer array
+ * @size: its size
+ * @value: value to search for
+ *
+ * Return: the index found or -1
  */
-int interpolation_search(int *array, size_t size, int value)
+int exponential_search(int *array, size_t size, int value)
 {
-	size_t a = 0, b = size - 1, v = 0;
+	size_t i = 1, siz = 0;
+	int ret;
 
-	if (array == NULL || size == 0)
+	if (!array || !size)
 		return (-1);
 
-	while (array[a] != array[b])
+	while (i < size && array[i] < value)
 	{
-		v = a + (value - array[a]) * (b - a) / (array[b] - array[a]);
-		if (v > size)
-		{
-			printf("Value checked array[%lu] is out of range\n",
-					v);
-			return (-1);
-		}
-		printf("Value checked array[%lu] = [%d]\n", v, array[v]);
-
-		if (array[v] < value)
-			a = v + 1;
-		else if (value < array[v])
-			b = v - 1;
-		else
-			return (v);
+		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
+		i <<= 1;
 	}
+	siz = (i >= size ? size : i + 1) - (i >> 1);
+	i >>= 1;
+	printf("Value found between indexes [%lu] and [%lu]\n",
+			i, i << 1 >= size ? size - 1 : i << 1);
+	ret = _search(array + i, siz, value);
+	return (ret == -1 ? ret : ret + (int)i);
+}
 
-	if (value == array[a])
-		return (a);
+/**
+ * _search - main functio that performs binary search
+ * @array: the integer array
+ * @size: its size
+ * @value: value to search for
+ *
+ * Return: the index found or -1
+ */
+int _search(int *array, size_t size, int value)
+{
+	size_t i = 0;
+	int *a = array;
 
+	if (!array)
+		return (-1);
+
+	while (size)
+	{
+		for (i = 0, printf("Searching in array: "); i < size; i++)
+			printf("%d%s", a[i], i + 1 == size ? "\n" : ", ");
+
+		i = (size - 1) / 2;
+		if (a[i] == value)
+			return ((a - array) + i);
+		else if (a[i] > value)
+			size = i;
+		else
+		{
+			a += (i + 1);
+			size -= (i + 1);
+		}
+	}
 	return (-1);
 }
